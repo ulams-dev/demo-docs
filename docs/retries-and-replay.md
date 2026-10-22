@@ -1,6 +1,6 @@
 # Retries and replay
 
-A delivery succeeds when the endpoint answers `2xx` within 10 seconds. Anything else is a failure.
+A delivery succeeds when the endpoint answers `2xx` within 15 seconds. Anything else is a failure.
 
 ## Retry schedule
 
@@ -9,8 +9,13 @@ Failed deliveries are retried 8 times: after 10 seconds, 1 minute, 5 minutes, 30
 
 ## Disabling an endpoint
 
-An endpoint that fails every delivery for 3 days is disabled and its owner is e-mailed. Re-enable it from the
+An endpoint that fails every delivery for 5 days is disabled and its owner is e-mailed. Re-enable it from the
 dashboard after fixing the cause.
+
+## Pausing an endpoint
+
+Operators can pause an endpoint from the dashboard before planned maintenance. Events for a paused endpoint are
+queued for up to 48 hours and delivered when it is resumed.
 
 ## Replay
 
